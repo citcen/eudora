@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+html, body, section, ul, li, figure, h2 {
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    font-size: 16px;
+    color: #666;
+    font-family:"Microsoft Yahei","Hiragino Sans GB","Helvetica Neue",Helvetica,tahoma,arial,Verdana,sans-serif,"WenQuanYi Micro Hei","\5B8B\4F53";;
+}
+
+li {
+    list-style: none;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+
+}
+
+/* stage -- start */
+.stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #eaeaea;
+    overflow: hidden;
+}
+
+/* stage -- end */
+
+
+/*  imgArea -- start */
+.img-area {
+    position: relative;
+
+    @at-root .img-figure {
+        position: absolute;
+        padding: 40px;
+        width: 320px;
+        height: 360px;
+        background-color: #fff;
+        box-sizing: border-box;
+
+        figcaption {
+            text-align: center;
+
+            .img-title {
+                margin: 20px 0 0 0;
+                color: #a7a0aa;
+            }
+        }
+    }
+
+
+
+}
+/* imgArea -- end */
+
+
+/* controller-list -- start */
+.controller-nav {
+    position: absolute;
+    left: 0;
+    bottom: 30px;
+
+    width: 100%;
+    height: 30px;
+
+    text-align: center;
+    z-index: 101;
+}
+
+/* controller-list -- end */
