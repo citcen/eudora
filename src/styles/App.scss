@@ -1,83 +1,127 @@
-@charset "UTF-8";
-
-html, body, section, ul, li, figure, h2 {
-    margin: 0;
-    padding: 0;
-}
-
-html, body {
+@mixin dis_wh {
     width: 100%;
     height: 100%;
 }
+
+@mixin abpos { position: absolute;}
+
+html,body,section,nav,figure,h2 {
+    padding: 0;
+    margin: 0;
+}
+
+html,body { @include dis_wh;}
 
 body {
-    font-size: 16px;
-    color: #666;
-    font-family:"Microsoft Yahei","Hiragino Sans GB","Helvetica Neue",Helvetica,tahoma,arial,Verdana,sans-serif,"WenQuanYi Micro Hei","\5B8B\4F53";;
+    background: #eee;
+    font-family:"Microsoft Yahei","Hiragino Sans GB","Helvetica Neue",Helvetica,tahoma,arial,Verdana,sans-serif,"WenQuanYi Micro Hei","\5B8B\4F53";
 }
 
-li {
-    list-style: none;
+@font-face {
+    font-family: 'iconfont';
+    src: url('../fonts/icons/turn-arrow.eot') format("embedded-opentype"),
+    url('../fonts/icons/turn-arrow.woff') format('woff'),
+    url('../fonts/icons/turn-arrow.ttf') format('truetype'),
+    url('../fonts/icons/turn-arrow.svg') format('svg');
 }
 
-#app {
-    width: 100%;
-    height: 100%;
-
-}
+#app { @include dis_wh;}
 
 /* stage -- start */
 .stage {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    background-color: #eaeaea;
+    @include abpos;
+    @include dis_wh;
     overflow: hidden;
 }
-
 /* stage -- end */
 
+.is-inverse {
+    transform-style: preserve-3d;
+    background: #666;
+    transform: translate(320px) rotateY(180deg) ;
+}
+/* img-- start*/
+.img-container {
+    @include dis_wh;
+    /*perspective: 1800px;*/
 
-/*  imgArea -- start */
-.img-area {
-    position: relative;
-
-    @at-root .img-figure {
-        position: absolute;
-        padding: 40px;
+    .img-figure {
+        @include abpos;
+        padding: 30px 40px;
         width: 320px;
         height: 360px;
-        background-color: #fff;
         box-sizing: border-box;
+        background-color: #fff;
         cursor: pointer;
-
-        figcaption {
-            text-align: center;
-
-            .img-title {
-                margin: 20px 0 0 0;
-                color: #a7a0aa;
-            }
+        transform-origin: 0 50% 0;
+        transform-style: preserve-3d;
+        transition: transform .6s ease-in-out, left .6s ease-in-out, top .6s ease-in-out;
+        .img-i {
+            position: relative;
+            margin: 0 auto;
+            width: 240px;
+            height: 240px;
         }
     }
 
+    .img-back {
+        @include abpos;
+        left: 0;
+        top: 0;
+        padding: 30px;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        color: #666;
+        box-sizing: border-box;
+        transform: rotateY(180deg) translateZ(1px);
+        backface-visibility: hidden;
+    }
 
-
+    figcaption {
+        text-align: center;
+        h2 {
+            -webkit-font-smoothing: antialiased;
+            margin-top: 20px;
+            font-size: 20px;
+            color: #666;
+        }
+    }
 }
-/* imgArea -- end */
+/* img -- end*/
 
-
-/* controller-list -- start */
+/* controller-nav  -- start */
 .controller-nav {
-    position: absolute;
-    left: 0;
-    bottom: 30px;
-
+    @include abpos;
+    bottom: 50px;
     width: 100%;
-    height: 30px;
-
     text-align: center;
-    z-index: 101;
-}
 
-/* controller-list -- end */
+    .controller {
+        display: inline-block;
+        width: 26px;
+        height: 26px;
+        margin-right: 10px;
+        background-color: #f5a8a8;
+        border-radius: 50%;
+        transform: scale(.6);
+        cursor: pointer;
+        transition: transform .4s;
+        vertical-align: middle;
+    }
+    &.is-center {
+        transform: scale(1);
+        background-color: #ea828f;
+        &::after {
+            color: #fff;
+            font-family: 'iconfont';
+            line-height: 27px;
+            content: '\e600';
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+    &.is-inverse {
+        transform: rotateY(180deg);
+    }
+}
+/* controller-nav -- end */
