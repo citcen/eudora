@@ -4,11 +4,13 @@
 
 你可以
 ```npm
-git clone https://github.com/citcen/eudora.git
+$ git clone https://github.com/citcen/eudora.git
 
-npm install
+$ cd eudora
 
-npm start
+$ npm install
+
+$ npm start
 ```
 然后打开 [http://localhost:8000/]() 查看效果.
 
