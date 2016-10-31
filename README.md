@@ -17,4 +17,4 @@ $ npm start
 
 基于yeoman generator的react-webpack脚手架，运用技术栈React,webpack,ES6,scss
 
-浏览地址 [https://citcen.github.io/eudora/dist/index.html]()
+浏览地址: https://citcen.github.io/eudora/dist/
