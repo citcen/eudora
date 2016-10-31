@@ -1,6 +1,6 @@
 #gallery-react
 
-根据慕课网gallery-by-react 课程自己完成的一个小项目
+根据慕课网gallery-by-react 课程自己完成的一个图片画廊项目
 
 你可以
 ```npm
