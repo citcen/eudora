@@ -109,18 +109,18 @@ body {
         transition: transform .4s;
         vertical-align: middle;
     }
-    &.is-center {
+    .is-center {
         transform: scale(1);
         background-color: #ea828f;
-        &::after {
-            color: #fff;
-            font-family: 'iconfont';
-            line-height: 27px;
-            content: '\e600';
-            -webkit-font-smoothing: antialiased;
-        }
     }
-    &.is-inverse {
+    .is-center:after {
+        color: #fff;
+        font-family: 'iconfont';
+        line-height: 27px;
+        content: '\e600';
+        -webkit-font-smoothing: antialiased;
+    }
+    .is-inverse {
         transform: rotateY(180deg);
     }
 }
