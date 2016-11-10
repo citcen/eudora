@@ -1,8 +1,6 @@
-#gallery-react
+#gallery-react-ForEudora
 
-根据慕课网gallery-by-react 课程 完成的一个图片画廊项目
 
-你可以
 ```npm
 $ git clone https://github.com/citcen/eudora.git
 
