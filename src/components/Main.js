@@ -234,26 +234,30 @@ class GalleryByReactApp extends React.Component {
         let imgFigureDOM = ReactDOM.findDOMNode(this.refs.imgFigure0),
             imgW = imgFigureDOM.scrollWidth,
             imgH = imgFigureDOM.scrollHeight,
+
             halfImgW = Math.ceil(imgW / 2),
-            halfImgH = Math.ceil(imgH / 2);
+            thirdOfStageWImgW = Math.ceil(imgW / 3),
+            thirdOfStageWImgH = Math.ceil(imgH / 3);
 
         //计算中心图片的位置点
         this.Constant.centerPos = {
             left: halfStageW - halfImgW,
-            top: halfStageH - halfImgH
+            top: halfStageH - thirdOfStageWImgH * 2
         };
+
         //计算左侧,右侧区域图片排布的取值范围
-        this.Constant.hRangePos.leftSecX[0] = -halfImgW;
+        this.Constant.hRangePos.leftSecX[0] = -thirdOfStageWImgW;
         this.Constant.hRangePos.leftSecX[1] = halfStageW - halfImgW * 3;
 
         this.Constant.hRangePos.rightSecX[0] = halfStageW + halfImgW;
-        this.Constant.hRangePos.rightSecX[1] = stageW - halfImgW;
+        this.Constant.hRangePos.rightSecX[1] = stageW - thirdOfStageWImgW * 2;
 
-        this.Constant.hRangePos.y[0] = -halfImgH;
-        this.Constant.hRangePos.y[1] = stageH - halfImgH;
+        this.Constant.hRangePos.y[0] = -thirdOfStageWImgH;
+        this.Constant.hRangePos.y[1] = stageH - thirdOfStageWImgW * 2;
+
         //计算上测区域图片排布的取值范围
-        this.Constant.vRangePos.topY[0] = -halfImgH;
-        this.Constant.vRangePos.topY[1] = halfStageH - halfImgH * 3;
+        this.Constant.vRangePos.topY[0] = -thirdOfStageWImgH;
+        this.Constant.vRangePos.topY[1] = halfStageH - thirdOfStageWImgH * 3;
 
         this.Constant.vRangePos.x[0] = halfStageW - imgW;
         this.Constant.vRangePos.x[1] = halfStageW;
@@ -288,9 +292,7 @@ class GalleryByReactApp extends React.Component {
                 );
                 //控制按钮
                 controllerLists.push(
-                    <ControllerLists key={index} imageRange={this.state.imagesRangeArr[index]} center={this.center(index)} inverse={this.inverse(index)}
-
-                    />
+                    <ControllerLists key={index} imageRange={this.state.imagesRangeArr[index]} center={this.center(index)} inverse={this.inverse(index)}/>
                 )
             }
         );

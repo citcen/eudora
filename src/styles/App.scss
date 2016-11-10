@@ -40,16 +40,17 @@ body {
     background: #666;
     transform: translate(320px) rotateY(180deg) ;
 }
+
 /* img-- start*/
 .img-container {
     @include dis_wh;
-    /*perspective: 1800px;*/
+    perspective: 1800px;
 
     .img-figure {
         @include abpos;
         padding: 30px 40px;
         width: 320px;
-        height: 360px;
+        height: 350px;
         box-sizing: border-box;
         background-color: #fff;
         cursor: pointer;
@@ -68,11 +69,15 @@ body {
         @include abpos;
         left: 0;
         top: 0;
-        padding: 30px;
+        padding: 120px 30px 30px 10px;
         width: 100%;
         height: 100%;
-        background-color: #fff;
-        color: #666;
+        background-color: #9fd5cc;
+        color: #000;
+        font-size: 18px;
+        line-height: 35px;
+        text-align: center;
+        vertical-align: middle;
         box-sizing: border-box;
         transform: rotateY(180deg) translateZ(1px);
         backface-visibility: hidden;
@@ -93,7 +98,7 @@ body {
 /* controller-nav  -- start */
 .controller-nav {
     @include abpos;
-    bottom: 50px;
+    bottom: 140px;
     width: 100%;
     text-align: center;
 
